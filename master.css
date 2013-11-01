@@ -1,0 +1,254 @@
+	body.white {background:white;
+		margin-left:0;
+		margin-top:10;
+		margin-bottom:0;}
+
+	body, html {
+	background-color: #996633;
+	padding: 0;
+	margin: 0;
+	text-align: center; /* crucial for horiz page centering */
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;	/* Sets all browsers & platforms to a common default type size */
+	font-size: .85em;	/* and then converts it to em's so even IE can text zoom for accessibility */
+	color: #000;
+}
+
+
+/* Main Layout */
+#wrap {
+	width: 720px;
+	margin: 0 auto;		/* crucial for horiz page centering */
+	padding-top:1em;
+	text-align: left;
+	border:1px solid #000000;
+	background: linen; /* creates sidebar borders that will always continue to the bottom of the white area */
+}
+
+#wrap2 {
+	width: 850px;
+	margin: 0 auto;		/* crucial for horiz page centering */
+	padding-top:1em;
+	text-align: left;
+	border:1px solid #000000;
+	background: linen; /* creates sidebar borders that will always continue to the bottom of the white area */
+}
+
+
+
+	div.checkmarks	{color: green;
+		padding:2px;
+ 		font-weight: normal;
+		font-style: italics;
+		font-size: 8pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+		
+	div.samplebox	{color: black;
+		border:solid;
+		padding:2px;
+		background:#FFFFCC;
+ 		font-weight: normal;
+		font-style: italics;
+		font-size: 10pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+		
+	div.samplebox2	{color: black;
+		border:solid;
+		padding:2px;
+		background:#FFCC99;
+ 		font-weight: normal;
+		font-style: italics;
+		font-size: 10pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+
+	div.samplebox3	{color: black;
+		border:solid;
+		padding:2px;
+		background:white;
+ 		font-weight: normal;
+		font-style: italics;
+		font-size: 10pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+
+
+	p.bold {color: black;
+		font-weight: bold;
+		font-style: normal;
+		font-size: 10pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+
+   p	{color: black;
+ 		font-weight: normal;
+		font-style: normal;
+		font-size: 10pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+		   
+   p.red	{color: red;
+   	font-weight: bold;
+   	font-style: normal;
+		font-size: 10pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+		
+		
+	ul	{color: black;
+		list-style:"disc";
+		font-size: 10pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+		
+	ul.graphic	{color: black;
+		list-style:disc;
+		list-style:url(./assets/bullet.gif);
+		font-size: 10pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+		
+	ol	{color: black;
+		font-size: 10pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+		
+	dt	{color: black;
+		font-size: 10pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+		
+	dd	{color: black;
+		font-size: 10pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+		
+   td	{color: black;
+		font-size: 10pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+
+   td.small	{color: black;
+		font-size: 8pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+
+	td.head {color: black;
+		font-weight: bold;
+		font-size: 10pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+
+	h1.splash {color: black;
+		font-weight: bold;
+		font-style: normal;
+		font-size: 18pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+
+       h1       {color: #6373B5;
+		font-weight: bold;
+		font-style: normal;
+		font-size: 18pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+		
+		h1.double       {color: #6373B5;
+		font-weight: bold;
+		font-style: normal;
+		font-size: 16pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+
+
+       h2       {color: #6699CC;
+		font-weight: bold;
+		font-style: italic;
+		font-size: 14pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+		
+		h3       {color: #6699CC;
+		font-weight: bold;
+		font-style: normal;
+		font-size: 12pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+
+	   .bold {color: black;
+		font-weight: bold;
+		font-style: normal;
+		font-size: 10pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+		
+		input {color:black; 
+      font-weight:normal;
+		font-style:normal;
+		font-size:10pt;
+		font-family: "monospace", "courier";}
+		
+		textarea {color:black; 
+      font-weight:normal;
+		font-style:normal;
+		font-size:10pt;
+		font-family: "monospace", "courier";}
+		
+		select {color:black; 
+      font-weight:normal;
+		font-style:normal;
+		font-size:10pt;
+		font-family: "monospace", "courier";}
+		
+		option {color:black; 
+      font-weight:normal;
+		font-style:normal;
+		font-size:10pt;
+		font-family: "monospace", "courier";}
+		
+		DIV.fieldname {color:black;  
+		text-align:left;
+		font-weight:bold;
+		font-style:normal;
+		font-size:10pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+		
+		DIV.fields {color:black;  
+		text-align:left;
+		font-style:italic;
+		font-size:8pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+
+      A:link {color: blue;  
+		font-weight:bold;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+	 
+       A:hover {color: red;  
+		font-weight:bold;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+
+       A:visited {color: #6373B5;  
+		font-weight:bold;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+
+       A:active {color: purple;  
+		font-weight:bold;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+	
+ .small	{color: black;
+		font-size: 8pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+		
+div.menubox	{
+		border:none;
+		padding:2px;
+		background:#FFFF99;
+ 		font-weight: bold;
+		font-size: 8pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+
+div.menubox2	{
+		border:1px solid #000000;
+		padding:2px;
+		background:#FFFF99;
+ 		font-weight: bold;
+		font-size: 8pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+		
+		
+div.menubox9	{
+		border:none;
+		padding:2px;
+ 		font-weight: bold;
+		font-size: 8pt;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+		
+ span.whitelink	{color: red;
+		font-size: 8pt;
+		font-weight: bold;
+		font-family: "verdana", "arial", "helvetica", "sans-serif";}
+		
+.indent {padding-left: 10px;
+		color: #FF3366}
+

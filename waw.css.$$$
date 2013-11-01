@@ -1,0 +1,69 @@
+  body    {background-color: white;
+	margin-top: 0;
+	margin-left: 0;}
+
+
+  
+p	{color: black;
+		font-size: 10pt;
+		font-family:"verdana", "sans-serif";}
+
+p.special {color: #669966;
+		font-weight: bold;
+		font-style: normal;
+		font-size: 18pt;
+		font-family:"verdana", "sans-serif";}
+		   
+   h1 {color: #669966;
+		font-weight: bold;
+		font-style: normal;
+		font-size: 18pt;
+		font-family:"verdana", "sans-serif";}
+		
+      h2       {color: #669966;
+		font-weight: bold;
+		font-style: normal;
+		font-size: 14pt;
+		font-family:"arial", "sans-serif";}
+		
+		td.head {color: #669966;
+		font-weight: bold;
+		font-style: normal;
+		font-size: 12pt;
+		font-family:"verdana", "sans-serif";}
+		
+   td {color: black;
+		font-size: 10pt;
+		font-family:"verdana", "sans-serif";}
+		
+		.menu {color: #336633;
+		font-weight: bold;
+		font-style: normal;
+		font-size: 8pt;
+		font-family:"verdana", "sans-serif";}
+
+		
+       A:hover {color: blue;  
+		font-weight:bold;
+		font-family:"verdana", "sans-serif";}
+
+       A:visited {color: #669966;  
+		font-weight:bold;
+		font-family:"verdana", "sans-serif";}
+
+       A:active {color: #669966;  
+		font-weight:bold;
+		font-family:"verdana", "sans-serif";}
+	
+	      A:link {color: #336633;  
+		font-weight:bold;
+		font-family:"verdana", "sans-serif";}
+		
+		      A:hover {color: #844d18;  
+		font-weight:bold;
+		font-family:"verdana", "sans-serif";}
+
+
+		
+
+

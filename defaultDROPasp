@@ -1,0 +1,178 @@
+<%@ Language=VBScript %>
+<% Option Explicit %>
+<%
+dim conn, TheMessage, RSStudent,RSTestsSelect,RSTestsInsert
+if isempty(Request.Form("EmailAddress")) then
+        'first time entering page
+        TheMessage = "If you have previously registered,  enter your email address and password to begin. <br><br>If you are not registered, click on the New Student graphic below.</p>"
+elseif Request.Form("EmailAddress") = "reports" then
+                Response.Redirect "./reports.asp"
+
+else
+        set conn = server.createobject ("adodb.connection")
+        conn.open "writingatworkonline"
+        set RSStudent = conn.execute ("SELECT StudentID, StudentFirstName, StudentLastName, StudentEmailAddress FROM lfgsm_students where StudentEmailAddress = '"_
+                 & Request.Form("EmailAddress") & "' and StudentPassword = '" _
+                 & Request.Form("Password") & "'")
+
+        if RSStudent.EOF then
+                'invalid login
+                TheMessage = "Your email address and password are not registered in our database. Try entering your email name and password again or  click on the New Student graphic below to register."      
+        '-- This closes the recordset and database connection
+                RSStudent.Close
+                conn.Close
+                Set conn = Nothing      
+        else
+                'valid entry
+                Session("StudentID") = RSStudent("StudentID")
+                Session("FirstName") = RSStudent("StudentFirstName")
+                Session("LastName") = RSStudent("StudentLastName")
+                Session("EmailAddress") = RSStudent("StudentEmailAddress")
+'-- ****************************************************************************      
+'--this is new addition to create record upon initial login
+
+				set RSTestsSelect = conn.execute ("SELECT * FROM lfgsm_tests where StudentID=" & Session("StudentID") & "")
+                
+                 if RSTestsSelect.EOF then
+                        set RSTestsInsert = conn.execute ("INSERT INTO lfgsm_tests (StudentID, TestDate) values ('" & Session("StudentID") & "', '" & Date & "')")   
+                else
+					Session("Gq1") = RSTestsSelect("Gq1")
+					Session("Gq2") = RSTestsSelect("Gq2")
+					Session("Gq3") = RSTestsSelect("Gq3")
+					Session("Gq4") = RSTestsSelect("Gq4")
+					Session("Gq5") = RSTestsSelect("Gq5")
+					Session("Gq6") = RSTestsSelect("Gq6")
+					Session("Gq7") = RSTestsSelect("Gq7")
+					Session("Gq8") = RSTestsSelect("Gq8")
+					Session("Gq9") = RSTestsSelect("Gq9")
+					Session("Gq10") = RSTestsSelect("Gq10")
+					
+					Session("Pq1") = RSTestsSelect("Pq1")
+					Session("Pq2") = RSTestsSelect("Pq2")
+					Session("Pq3") = RSTestsSelect("Pq3")
+					Session("Pq4") = RSTestsSelect("Pq4")
+					Session("Pq5") = RSTestsSelect("Pq5")
+					Session("Pq6") = RSTestsSelect("Pq6")
+					Session("Pq7") = RSTestsSelect("Pq7")
+					Session("Pq8") = RSTestsSelect("Pq8")
+					Session("Pq9") = RSTestsSelect("Pq9")
+					Session("Pq10") = RSTestsSelect("Pq10")
+					
+					Session("Vq1") = RSTestsSelect("Vq1")
+					Session("Vq2") = RSTestsSelect("Vq2")
+					Session("Vq3") = RSTestsSelect("Vq3")
+					Session("Vq4") = RSTestsSelect("Vq4")
+					Session("Vq5") = RSTestsSelect("Vq5")
+					Session("VqRewrite") = RSTestsSelect("VqRewrite")
+					
+					Session("Short1") = RSTestsSelect("Short1")
+					Session("Short2") = RSTestsSelect("Short2")
+					Session("Long1") = RSTestsSelect("Long1")
+					Session("Long2") = RSTestsSelect("Long2")
+
+                end if 
+'-- ****************************************************************************
+
+                '-- This closes the recordset and database connection
+                RSStudent.Close
+                conn.Close
+                Set conn = Nothing      
+                Response.Redirect "./begin.asp"
+        end if
+end if          
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 TRANSITIONAL//EN">
+<html>
+<head>
+<title>Lake Forest MBA Writing Assessment: Login</title>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<META NAME="rating" CONTENT="General">
+<META NAME="revisit-after" CONTENT="15 days">
+<META HTTP-EQUIV = "expires" CONTENT="Never">
+<META NAME="ROBOTS" CONTENT="ALL">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META name="description" content="Lake Forest MBA Writing Assessment: Login">
+<META name="keywords" Content="writing at work effective business writing grammar puncutation">
+<link rel="stylesheet" type="text/css" href="master.css">
+</head>
+
+<body>
+
+ 
+<!-- This table sets the format for the page -->
+  <table cellpadding="0" cellspacing="0" border="0" width="600" cols="3">
+  <form action="./default.asp"  method="post">
+   <tr valign="top" align="left">
+
+   <!-- This column displays the logos -->
+	<td width="100" align="center"><img src="./assets/logo_lfmba1.gif" width="77" height="90" border="0"></p><p>
+	</td>
+   
+   <!-- This column inserts a spacer -->        
+        <td width="10">
+        <img src="./assets/spacer.gif" width="10" border="0"></td>
+        
+   <!-- This column contains the headings and text -->	
+	<td width="490"><img src="./assets/logo_lfmba2.gif" width="162" height="90" border="0">
+	<h1>Writing Skills Assessment</h1>
+  
+        <!-- This part prints the appropriate message -->
+        <p class="bold">
+        <% Response.Write TheMessage %>
+        </p>
+  
+        <!-- This embedded table sets the form text boxes and the new student icon and the submit button-->
+        <table cellpadding="0" cellspacing="0" border="0" width="490" cols="2">
+        <tr valign="top" align="left">
+        <td width="390">
+        <p>Email Address<br>
+        <input type="text" name="EmailAddress" value="" size="30" maxlength="50"></p>   
+        <p>Password<br>
+        <input type="password" name="Password" value="" size="20" maxlength="50"></p></td>
+        <td width="100" align="center"><a href="./register.asp"><img src="./assets/pencil2.gif" height="50" width="50" border="0" alt="New Student"></a><br>
+        <b>New Student</b><!-- This closes out the row  -->
+        </table>
+
+        </td>
+        </tr>
+
+   <!-- This column displays the Writing at Work logo -->
+        <tr><td width="100" align="center" valign="top">
+        <img src="./assets/logo_waw.gif" width="78" height="64" border="0"></p></td>
+
+   <!-- This column inserts a spacer -->        
+        <td width="10">
+        <img src="./assets/spacer.gif" width="10" border="0"></td>
+        
+   <!-- This submits the form information -->   
+        <td width="490" valign="top" align="left"><p><input type="submit" value="Next" name="Action">
+                                <input type="reset" value="Clear">
+                                <p>Assessment developed by Writing at Work.</p></td>
+        </tr>                   
+                        </form>
+                        
+
+
+        <!-- This draws a horizontal line -->
+        <tr><td colspan="3"><hr></td></tr>
+
+   <!-- This column displays the ActionWeb Design logo -->
+        <tr><td width="100" align="center">
+        &nbsp;</p></td>
+
+   <!-- This column inserts a spacer -->        
+        <td width="10">
+        <img src="./assets/spacer.gif" width="10" border="0"></td>
+        
+   <!-- This column contains the headings and text -->  
+        <td width="490" valign="top" align="left">Web site designed by Writing at Work, Web Design and Interactive Training Group.</td>
+        </tr>
+
+
+<!-- This closes out the table -->
+        </table>
+
+
+</body>
+</html>
